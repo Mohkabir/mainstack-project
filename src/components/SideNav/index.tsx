@@ -2,14 +2,15 @@ import React, { FC } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import {
   DashboardIcon,
-  DecisionIcon,
-  GuarantorsIcon,
-  KarmaIcon,
-  LoansIcon,
-  LoansRequestIcon,
+  Items1Icon,
+  Items2Icon,
+  Items3Icon,
+  Items4Icon,
+  Items5Icon,
+  Items6Icon,
+  Items7Icon,
+  Items8Icon,
   LogOutIcon,
-  UsersIcon,
-  WhitelistIcon,
 } from "../icons";
 import "./SideNav.scss";
 
@@ -27,31 +28,31 @@ const SideNav: FC<CloseInterface> = ({ closeSideNav }) => {
           <DashboardIcon /> Dashboard
         </NavLink>
         <NavLink to="/item-one">
-          <UsersIcon /> Item 1
+          <Items1Icon /> Item 1
         </NavLink>
         <NavLink to="/item-two">
-          <GuarantorsIcon /> Item 2
+          <Items2Icon /> Item 2
         </NavLink>
         <NavLink to="/item-three">
-          <LoansIcon /> Item 3
+          <Items3Icon /> Item 3
         </NavLink>
         <h6>Others 1</h6>
         <NavLink to="/item-four">
-          <DecisionIcon /> Item 4
+          <Items4Icon /> Item 4
         </NavLink>
         <NavLink to="/item-five">
-          <LoansRequestIcon />
+          <Items5Icon />
           Item 5
         </NavLink>
         <h6>Others 2</h6>
         <NavLink to="/item-six">
-          <WhitelistIcon /> Item 6
+          <Items6Icon /> Item 6
         </NavLink>
         <NavLink to="/item-seven">
-          <KarmaIcon /> Item 7
+          <Items7Icon /> Item 7
         </NavLink>
         <NavLink to="/item-eight">
-          <LogOutIcon />
+          <Items8Icon />
           Item 8
         </NavLink>
         <h5 className="switch logout">

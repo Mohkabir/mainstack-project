@@ -1,22 +1,23 @@
 :root {
-  --black: #3d3d3d;
+  --black: #4d5760;
   --white: #ffffff;
   --primary: #ff5403;
 }
-
+// color: #131316;
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: WorkSans;
+  font-family: Söhne;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
+  color: var(--black);
 }
 
 @font-face {
-  font-family: WorkSans;
-  src: url("../assets/fonts/Work_Sans/WorkSans-Regular.ttf");
+  font-family: Söhne;
+  src: url("../assets/fonts/Söhne/TestSöhne-Buch.otf");
   font-weight: 400;
 }
 
@@ -30,31 +31,36 @@
 }
 
 h1 {
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 55px;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
 }
 
-h3 {
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 28px;
-}
-h4 {
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 26px;
-}
-h5 {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-}
-h6 {
+h2 {
   font-weight: 600;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 24px;
+  line-height: 32px;
 }
+h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+// h4 {
+//   font-weight: 500;
+//   font-size: 22px;
+//   line-height: 26px;
+// }
+// h5 {
+//   font-weight: 500;
+//   font-size: 16px;
+//   line-height: 19px;
+// }
+// h6 {
+//   font-weight: 600;
+//   font-size: 12px;
+//   line-height: 14px;
+// }
 img {
   max-width: 100%;
 }
@@ -62,12 +68,12 @@ img {
 p {
   font-weight: 400;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 22px;
 }
 span {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 14px;
+  line-height: 22px;
 }
 
 .primary_color {
