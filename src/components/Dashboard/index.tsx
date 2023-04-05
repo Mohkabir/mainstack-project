@@ -1,63 +1,64 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 // import { fetchChartDataApi } from "../../api";
-import Card from "./Card";
+import Card, { Report } from "./Card";
 import ChartWrapper from "./ChartWrapper";
 import "./Dashboard.scss";
+import loader from "../../assets/images/load-loading.gif";
 
 const Dashboard = () => {
-  const topLocations = [
-    {
-      country: "Nigeria",
-      count: 68,
-      percent: 34,
-    },
-    {
-      country: "Germany",
-      count: 37,
-      percent: 19,
-    },
-    {
-      country: "Ghana",
-      count: 50,
-      percent: 25,
-    },
-    {
-      country: "Finland",
-      count: 40,
-      percent: 20,
-    },
-    {
-      country: "United Kingdom",
-      count: 4,
-      percent: 2,
-    },
-  ];
-  const topSources = [
-    {
-      source: "google",
-      count: 50,
-      percent: 25,
-    },
-    {
-      source: "instagram",
-      count: 68,
-      percent: 34,
-    },
-    {
-      source: "facebook",
-      count: 40,
-      percent: 20,
-    },
-    {
-      source: "linkedin",
-      count: 41,
-      percent: 21,
-    },
-  ];
+  // const topLocations = [
+  //   {
+  //     country: "Nigeria",
+  //     count: 68,
+  //     percent: 34,
+  //   },
+  //   {
+  //     country: "Germany",
+  //     count: 37,
+  //     percent: 19,
+  //   },
+  //   {
+  //     country: "Ghana",
+  //     count: 50,
+  //     percent: 25,
+  //   },
+  //   {
+  //     country: "Finland",
+  //     count: 40,
+  //     percent: 20,
+  //   },
+  //   {
+  //     country: "United Kingdom",
+  //     count: 4,
+  //     percent: 2,
+  //   },
+  // ];
+  // const topSources = [
+  //   {
+  //     source: "google",
+  //     count: 50,
+  //     percent: 25,
+  //   },
+  //   {
+  //     source: "instagram",
+  //     count: 68,
+  //     percent: 34,
+  //   },
+  //   {
+  //     source: "facebook",
+  //     count: 40,
+  //     percent: 20,
+  //   },
+  //   {
+  //     source: "linkedin",
+  //     count: 41,
+  //     percent: 21,
+  //   },
+  // ];
 
   const [currentTab, setCurrentTab] = useState<number>(5);
-  const [datas, setDatas] = useState();
+  const [datas, setDatas] = useState<any>();
   const [loading, setLoading] = useState(false);
 
   const fetch = async () => {
@@ -126,7 +127,9 @@ const Dashboard = () => {
         </button>
       </div>
       {loading ? (
-        "Loading.."
+        <div style={{ textAlign: "center" }}>
+          <img src={loader} />
+        </div>
       ) : currentTab === 5 && datas ? (
         <ChartWrapper datas={datas} />
       ) : (
@@ -142,10 +145,12 @@ const Dashboard = () => {
         </div>
       )}
 
-      <div className="report">
-        <Card data={topLocations} />
-        <Card data={topSources} />
-      </div>
+      {datas && (
+        <div className="report">
+          <Card datas={[...datas?.top_locations]} />
+          <Card datas={[...datas?.top_sources]} />
+        </div>
+      )}
     </div>
   );
 };

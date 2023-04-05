@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import dayjs from "dayjs";
+import React, { useEffect, useState } from "react";
 import { createUseStyles } from "react-jss";
 import {
   AreaChart,
@@ -12,13 +13,9 @@ import {
 
 const useStyles = createUseStyles(() => ({
   container: {
-    // color: "#fff",
-    // backgroundColor: "rgb(255, 255, 255)",
-    // padding: "1rem",
     transition: "0.3s ease-in-out",
     width: "100%",
     height: "100%",
-    // outline:"1px solid red"
   },
 }));
 
@@ -34,37 +31,30 @@ const GradientColors = () => {
 const MyGraph = ({ datas }: any) => {
   const data_1 = [
     {
-      view: 50,
+      view: 0,
       name: "",
-    },
-    {
-      view: 900,
-      name: "18 Dec",
-    },
-    {
-      view: 950,
-      name: "19 Dec",
-    },
-    {
-      view: 580,
-      name: "20 Dec",
-    },
-    {
-      view: 630,
-      name: "21 Dec",
-    },
-    {
-      view: 960,
-      name: "22 Dec",
-    },
-    {
-      view: 200,
-      name: "23 Dec",
     },
   ];
 
   const [data, setdata] = useState(data_1);
   const classes = useStyles();
+
+  const extractDate = () => {
+    let res = [];
+    for (const key in datas?.graph_data?.views) {
+      console.log(key, "key");
+      res.push({
+        view: datas?.graph_data?.views[key],
+        name: dayjs(key).format("D MMM"),
+      });
+    }
+    setdata(res);
+  };
+
+  useEffect(() => {
+    extractDate();
+  }, [datas]);
+
   return (
     <div className={classes.container}>
       <ResponsiveContainer width="100%" height="100%">

@@ -1,47 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
+import { Reports } from "./Card";
 
-const DonutChart = () => {
-  const [devicesSoldData, setDevicesSoldData] = useState({
-    series: [44, 55, 20, 18],
-    options: {
-      plotOptions: {
-        pie: {
-          donut: {
-            labels: {
-              show: false,
-            },
-          },
-        },
-      },
-      responsive: [
-        {
-          breakpoint: 4580,
-          options: {
-            legend: {
-              colors: ["red", "yellow", "purple"],
-              show: false,
-              //   position: "right",
-              //   offsetY: 0,
-              height: "100%",
-            },
-            dataLabels: {
-              enabled: false,
-            },
-          },
-        },
-      ],
-      dataLabels: {
-        enabled: false,
-      },
-      //   labels: ["In Progress", "Sold"],
-    },
-  });
+const DonutChart = ({ datas, reportsData }: any) => {
+//   const extractChartData = () => {
+//     // let res = [];
+
+//     const res = datas.map((data) => data.percent);
+//     const data = {
+//       ...reportsData,
+//       series: [...res, 100 - res.reduce((a, b) => a + b)],
+//     };
+//     setReportsData(data);
+//     console.log(
+//       datas,
+//       res.reduce((a, b) => a + b),
+//       "res"
+//     );
+//   };
+
+//   useEffect(() => {
+//     extractChartData();
+//   }, [datas]);
+
   return (
     <div id="chart">
       <Chart
-        options={devicesSoldData.options}
-        series={devicesSoldData.series}
+        options={reportsData.options}
+        series={reportsData.series}
         type="donut"
       />
     </div>
