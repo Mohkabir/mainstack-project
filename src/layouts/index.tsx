@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
-import { OpenSideNav } from "../components/icons";
+import { MenuIcon, OpenSideNav } from "../components/icons";
 import SideNav from "../components/SideNav";
 
 type LayoutProps = {
@@ -17,7 +17,7 @@ const MainLayout = (props: LayoutProps) => {
         className="openSideNavBtn"
         onClick={() => setissSideBar(!issSideBar)}
       >
-        <OpenSideNav />
+        <MenuIcon />
       </button>
       <div className="layout">
         <div className={`sideNavWrap ${issSideBar && "openSideNav"}`}>

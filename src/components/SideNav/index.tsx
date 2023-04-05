@@ -13,7 +13,7 @@ import {
   LogOutIcon,
 } from "../icons";
 import "./SideNav.scss";
-
+import profile from "../../assets/images/profile.png";
 interface CloseInterface {
   closeSideNav(): void;
 }
@@ -55,8 +55,8 @@ const SideNav: FC<CloseInterface> = ({ closeSideNav }) => {
           <Items8Icon />
           Item 8
         </NavLink>
-        <h5 className="switch logout">
-          <LogOutIcon /> Logout
+        <h5 className="profile">
+          <img src={profile} alt="" /> Blessing Daniels
         </h5>
       </ul>
     </div>

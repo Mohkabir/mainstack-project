@@ -13,12 +13,15 @@ const Header = () => {
           <LogoIcon />
         </Link>
       </div>
+      <div className="title">
+        <h3>Dashboard</h3>
+      </div>
 
-      <div className="menuBar">
+      {/* <div className="menuBar">
         <span onClick={() => setIsMenu(true)}>
           <MenuIcon />
         </span>
-      </div>
+      </div> */}
 
       {isMenu && (
         <div className="mobileNav">

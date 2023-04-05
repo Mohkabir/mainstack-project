@@ -1,11 +1,20 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   .logo {
-    width: 14%;
-    position: absolute;
-    top: 36px;
-    left: 0;
+    width: 20%;
+    border-right: 1px solid #eff1f6;
+    padding: 24px 0;
     svg {
-      width: 80%;
+      width: 53%;
+    }
+  }
+  .title {
+    width: 80%;
+    h3 {
+      width: 90%;
+      margin: 0 auto;
     }
   }
   .menuBar {
@@ -13,29 +22,6 @@
   }
   .mobileNav {
     display: none;
-  }
-  @media (max-width: 1150px) {
-    padding: 15px 20px;
-    .logo {
-      width: 14%;
-      svg {
-        width: 80%;
-      }
-    }
-  }
-  @media (max-width: 760px) {
-    .logo {
-      width: 150px;
-      svg {
-        width: 80%;
-      }
-    }
-    .menuBar {
-      display: block;
-      svg {
-        width: 25px;
-      }
-    }
   }
   .mobileNav {
     display: block;
@@ -73,4 +59,35 @@
       }
     }
   }
+  @media (max-width: 1150px) {
+    padding: 5px 20px;
+
+    .logo {
+      width: 20%;
+      border-right: 1px solid #eff1f6;
+      padding: 0;
+      svg {
+        width: 53%;
+      }
+    }
+
+    .title {
+      display: none;
+    }
+  }
+  // @media (max-width: 760px) {
+  //   .logo {
+  //     width: 150px;
+  //     svg {
+  //       width: 80%;
+  //     }
+  //   }
+
+  //   .menuBar {
+  //     display: block;
+  //     svg {
+  //       width: 25px;
+  //     }
+  //   }
+  // }
 }

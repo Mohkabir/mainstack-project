@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import MainLayout from "../layouts";
 import OtherPages from "../pages/OtherPages";
-import Dashboard from "../pages/Dashboard";
+import DashboardPage from "../pages/Dashboard";
 
 const AllRoutes = () => {
   const location = useLocation();
@@ -23,7 +23,7 @@ const AllRoutes = () => {
           path="/"
           element={
             <MainLayout>
-              <Dashboard />
+              <DashboardPage />
             </MainLayout>
           }
         />
@@ -34,7 +34,7 @@ const AllRoutes = () => {
           path="/dashboard"
           element={
             <MainLayout>
-              <Dashboard />
+              <DashboardPage />
             </MainLayout>
           }
         />
