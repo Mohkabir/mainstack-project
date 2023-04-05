@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   DashboardIcon,
   Items1Icon,
@@ -10,7 +10,6 @@ import {
   Items6Icon,
   Items7Icon,
   Items8Icon,
-  LogOutIcon,
 } from "../icons";
 import "./SideNav.scss";
 import profile from "../../assets/images/profile.png";

@@ -42,7 +42,6 @@ const MyGraph = ({ datas }: any) => {
   const extractDate = () => {
     let res = [];
     for (const key in datas?.graph_data?.views) {
-      console.log(key, "key");
       res.push({
         view: datas?.graph_data?.views[key],
         name: dayjs(key).format("D MMM"),

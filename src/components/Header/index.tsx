@@ -17,12 +17,6 @@ const Header = () => {
         <h3>Dashboard</h3>
       </div>
 
-      {/* <div className="menuBar">
-        <span onClick={() => setIsMenu(true)}>
-          <MenuIcon />
-        </span>
-      </div> */}
-
       {isMenu && (
         <div className="mobileNav">
           <p>

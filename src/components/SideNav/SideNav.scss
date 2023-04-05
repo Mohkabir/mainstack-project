@@ -2,6 +2,7 @@
   ul {
     background: #ffffff;
     border-right: 1px solid #dbdee6;
+    padding-top: 20px;
     .profile {
       margin: 39px 0;
       font-size: 16px;
@@ -27,7 +28,7 @@
       text-decoration: none;
       padding-left: 60px;
       border-left: 3px solid #ffffff;
-      font-weight: 400;
+      font-weight: 500;
       font-size: 16px;
       line-height: 19px;
       display: flex;
@@ -40,7 +41,6 @@
     h6 {
       font-family: Söhne;
       font-weight: 400;
-      font-weight: 800;
       color: #4d5760;
       padding-left: 63px;
       margin-top: 20px;
@@ -78,13 +78,15 @@
   }
   @media (max-width: 760px) {
     ul {
-      // text-align: center;
       .profile {
         font-size: 14px;
         padding-left: 0px;
         img {
           margin-left: 27px;
         }
+      }
+      p {
+        font-size: 26px;
       }
       a {
         padding-left: 25px;

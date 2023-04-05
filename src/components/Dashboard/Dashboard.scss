@@ -1,5 +1,4 @@
 .dashboard {
-  // outline: 1px solid red;
   width: 90%;
   margin: 0 auto;
   h3 {
@@ -33,6 +32,8 @@
       padding: 12px 16px;
       margin-right: 12px;
       cursor: pointer;
+      font-family: Söhne;
+      font-weight: 500;
     }
     .active {
       background: #ffddcd;
@@ -69,7 +70,6 @@
     justify-content: space-between;
     margin-top: 24px;
     & > div {
-      // outline: 1px solid red;
       border: 1px solid #eff1f6;
       border-radius: 12px;
       padding: 24px;
@@ -79,12 +79,14 @@
         align-items: flex-start;
         justify-content: space-between;
         margin-bottom: 40px;
+        h4 {
+          font-weight: 500;
+        }
         p {
           color: var(--primary);
         }
       }
       .contents {
-        // outline: 1px solid red;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -97,9 +99,10 @@
               text-transform: capitalize;
               display: flex;
               align-items: center;
+              font-size: 16px;
+
               strong {
                 font-weight: bolder;
-                // color: red;
                 display: inline-block;
                 margin: 0 5px;
               }

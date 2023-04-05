@@ -3,14 +3,11 @@ import { InfoIcon } from "../icons";
 import MyGraph from "./Chart";
 
 const ChartWrapper = ({ datas }: any) => {
-
   const getSum = () => {
     let sum = 0;
     for (const key in datas?.graph_data?.views) {
-      console.log(key, "key");
       sum += datas?.graph_data?.views[key];
     }
-    console.log(sum, "sum");
     return sum;
   };
 

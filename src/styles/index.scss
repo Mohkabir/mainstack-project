@@ -3,7 +3,7 @@
   --white: #ffffff;
   --primary: #ff5403;
 }
-// color: #131316;
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -17,8 +17,18 @@
 
 @font-face {
   font-family: Söhne;
-  src: url("../assets/fonts/Söhne/TestSöhne-Buch.otf");
+  src: url("../assets/fonts/Söhne/TestSöhne-Leicht.otf");
   font-weight: 400;
+}
+@font-face {
+  font-family: Söhne;
+  src: url("../assets/fonts/Söhne/TestSöhne-Halbfett.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: Söhne;
+  src: url("../assets/fonts/Söhne/TestSöhne-Buch.otf");
+  font-weight: 500;
 }
 
 .global_container {
@@ -55,16 +65,7 @@ h4 {
   line-height: 24px;
   color: #131316;
 }
-// h5 {
-//   font-weight: 500;
-//   font-size: 16px;
-//   line-height: 19px;
-// }
-// h6 {
-//   font-weight: 600;
-//   font-size: 12px;
-//   line-height: 14px;
-// }
+
 img {
   max-width: 100%;
 }
@@ -91,11 +92,11 @@ span {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
   height: 100vh;
   overflow-y: scroll;
+  padding-bottom: 100px;
 }
 .contentsSection {
-  width: 80%;
+  width: 79%;
   background-color: #ffffff;
-  // background: #E5E5E5;
   height: 100vh;
   overflow-y: scroll;
   padding-bottom: 100px;
@@ -136,13 +137,7 @@ span {
   cursor: pointer;
   background-color: inherit;
   border: none;
-  // position: absolute;
-  // top: 105px;
-  // left: -20px;
   display: none;
-  // svg {
-  //   width: 40px;
-  // }
 }
 .loading {
   height: 20vh;
@@ -157,6 +152,7 @@ span {
     position: absolute;
     top: 50px;
     display: none;
+    z-index: 20;
   }
   .contentsSection {
     width: 100%;

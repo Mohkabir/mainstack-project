@@ -1,72 +1,26 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import { fetchChartDataApi } from "../../api";
-import Card, { Report } from "./Card";
+import Card from "./Card";
 import ChartWrapper from "./ChartWrapper";
 import "./Dashboard.scss";
 import loader from "../../assets/images/load-loading.gif";
 
 const Dashboard = () => {
-  // const topLocations = [
-  //   {
-  //     country: "Nigeria",
-  //     count: 68,
-  //     percent: 34,
-  //   },
-  //   {
-  //     country: "Germany",
-  //     count: 37,
-  //     percent: 19,
-  //   },
-  //   {
-  //     country: "Ghana",
-  //     count: 50,
-  //     percent: 25,
-  //   },
-  //   {
-  //     country: "Finland",
-  //     count: 40,
-  //     percent: 20,
-  //   },
-  //   {
-  //     country: "United Kingdom",
-  //     count: 4,
-  //     percent: 2,
-  //   },
-  // ];
-  // const topSources = [
-  //   {
-  //     source: "google",
-  //     count: 50,
-  //     percent: 25,
-  //   },
-  //   {
-  //     source: "instagram",
-  //     count: 68,
-  //     percent: 34,
-  //   },
-  //   {
-  //     source: "facebook",
-  //     count: 40,
-  //     percent: 20,
-  //   },
-  //   {
-  //     source: "linkedin",
-  //     count: 41,
-  //     percent: 21,
-  //   },
-  // ];
-
   const [currentTab, setCurrentTab] = useState<number>(5);
   const [datas, setDatas] = useState<any>();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const fetch = async () => {
     setLoading(true);
-    let res = await axios.get(`https://fe-task-api.mainstack.io/`);
-    // let res = await fetchChartDataApi();
-    console.log(res.data, "res");
-    setDatas(res.data);
+
+    try {
+      let res = await axios.get(`https://fe-task-api.mainstack.io/`);
+      setDatas(res.data);
+    } catch (error) {
+      setError(true);
+    }
+
     setLoading(false);
   };
   useEffect(() => {
@@ -78,7 +32,7 @@ const Dashboard = () => {
       <h3 className="title">Dashboard</h3>
       <div className="welcome">
         <h2>Good morning, Blessing ⛅️</h2>
-        <span>View analytics</span>
+        <span style={{ cursor: "pointer" }}>View analytics</span>
       </div>
       <p className="desc">Check out your dashboard summary.</p>
 
@@ -141,14 +95,18 @@ const Dashboard = () => {
             justifyContent: "center",
           }}
         >
-          No Contents for this Date
+          {error ? (
+            <p style={{ color: "red" }}>Something Wront wrong kindly reload</p>
+          ) : (
+            <p>No Contents for this Date</p>
+          )}
         </div>
       )}
 
       {datas && (
         <div className="report">
-          <Card datas={[...datas?.top_locations]} />
-          <Card datas={[...datas?.top_sources]} />
+          <Card datas={[...datas?.top_locations]} title="Top Locations" />
+          <Card datas={[...datas?.top_sources]} title="Top Referral source" />
         </div>
       )}
     </div>
