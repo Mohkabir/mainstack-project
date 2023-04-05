@@ -23,13 +23,14 @@
 
 @font-face {
   font-family: Söhne;
-  src: url("../assets/fonts/TestSöhne-Halbfett.otf");
-  font-weight: 600;
-}
-@font-face {
-  font-family: Söhne;
   src: url("../assets/fonts/TestSöhne-Buch.otf");
   font-weight: 500;
+}
+
+@font-face {
+  font-family: Söhne;
+  src: url("../assets/fonts/TestSöhne-Halbfett.otf");
+  font-weight: 600;
 }
 
 .global_container {

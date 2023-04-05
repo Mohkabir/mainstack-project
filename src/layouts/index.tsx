@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
-import { MenuIcon, OpenSideNav } from "../components/icons";
+import { MenuIcon } from "../components/icons";
 import SideNav from "../components/SideNav";
 
 type LayoutProps = {

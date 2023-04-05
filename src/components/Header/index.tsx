@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { LogoIcon, MenuIcon } from "../icons";
+import { LogoIcon } from "../icons";
 import "./Header.scss";
 
 const Header = () => {
